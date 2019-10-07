@@ -3,6 +3,8 @@ package com.fish.study.dataBase.mapper;
 import com.fish.study.dataBase.model.Coffee;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * 咖啡mapper
  *
@@ -25,4 +27,13 @@ public interface CoffeeMapper {
             // @Result(column = "update_time", property = "updateTime"),
     })
     Coffee findById(@Param("id") Long id);
+
+    @Select("select * from t_coffee")
+    @Results({
+            @Result(id = true, column = "id", property = "id"),
+            @Result(column = "create_time", property = "createTime"),
+            // map-underscore-to-camel-case = true 可以实现一样的效果
+            // @Result(column = "update_time", property = "updateTime"),
+    })
+    List<Coffee> findAll();
 }
