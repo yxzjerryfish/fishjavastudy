@@ -1,5 +1,6 @@
 package com.fish.study.dataBase.api;
 
+import com.fish.study.dataBase.annotation.TestAnnotation;
 import com.fish.study.dataBase.mapper.CoffeeMapper;
 import com.fish.study.dataBase.model.Coffee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class SearchCoffee {
     @Autowired
     CoffeeMapper coffeeMapper;
 
+//    @TestAnnotation  加在这里和加在接口里一样
     @RequestMapping("/getCoffee")
     public List<Coffee> getCoffee(){
         return coffeeMapper.findAll();

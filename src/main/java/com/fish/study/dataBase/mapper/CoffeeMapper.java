@@ -1,5 +1,6 @@
 package com.fish.study.dataBase.mapper;
 
+import com.fish.study.dataBase.annotation.TestAnnotation;
 import com.fish.study.dataBase.model.Coffee;
 import org.apache.ibatis.annotations.*;
 
@@ -28,6 +29,7 @@ public interface CoffeeMapper {
     })
     Coffee findById(@Param("id") Long id);
 
+    @TestAnnotation
     @Select("select * from t_coffee")
     @Results({
             @Result(id = true, column = "id", property = "id"),
