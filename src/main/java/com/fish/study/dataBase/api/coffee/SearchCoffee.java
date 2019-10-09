@@ -1,4 +1,4 @@
-package com.fish.study.dataBase.api;
+package com.fish.study.dataBase.api.coffee;
 
 import com.fish.study.dataBase.annotation.TestAnnotation;
 import com.fish.study.dataBase.mapper.CoffeeMapper;
@@ -35,7 +35,7 @@ public class SearchCoffee {
     }
 
     @GetMapping("/getCoffeebyid")
-    @ApiOperation(value="获取咖啡列表", notes="获取咖啡列表")
+    @ApiOperation(value="获取单个咖啡", notes="获取单个咖啡")
     public Coffee getCoffeeById(Integer id){
         return coffeeMapper.findById(id.longValue());
     }
