@@ -1,5 +1,7 @@
 package com.fish.study.dataBase.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,10 +20,21 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ApiModel(description = "咖啡模型")
 public class Coffee {
+
+    @ApiModelProperty(value = "咖啡ID")
     private Long id;
+
+    @ApiModelProperty(value = "咖啡名称")
     private String name;
+
+    @ApiModelProperty(value = "咖啡价格")
     private Integer price;
+
+    @ApiModelProperty(value = "咖啡添加时间")
     private Date createTime;
+
+    @ApiModelProperty(value = "咖啡更新时间")
     private Date updateTime;
 }

@@ -3,6 +3,7 @@ package com.fish.study.dataBase.mapper;
 import com.fish.study.dataBase.annotation.TestAnnotation;
 import com.fish.study.dataBase.model.Coffee;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * @date : 2019/10/6 20:33
  */
 @Mapper
+@Component
 public interface CoffeeMapper {
     @Insert("insert into t_coffee (name, price, create_time, update_time)"
             + "values (#{name}, #{price}, now(), now())")
