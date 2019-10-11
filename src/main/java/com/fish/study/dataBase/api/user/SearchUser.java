@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * .
@@ -22,7 +23,7 @@ public class SearchUser {
 
     @GetMapping("/get")
     @ApiOperation(value = "获取用户信息",notes = "获取用户信息")
-    public HashMap getUser(){
+    public Map getUser(){
         return new HashMap(){{
             put("Hello","Fish");
             put("Hello","Swagger");
